@@ -38,5 +38,5 @@ while True:
     os.system("git push origin master")
 
     lastMove = move
-    time.sleep(61)
+    time.sleep(1)
 
