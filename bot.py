@@ -33,6 +33,7 @@ while True:
         move = random.choice(allowedMoves.split(" "))
 
     open("act", "w").write(move)
+    open("timestamp", "w").write(repr(time.time()))
     os.system("git add -A")
     os.system("git commit -m \"move " + open("act").read().strip() + "\"")
     os.system("git push origin master")
