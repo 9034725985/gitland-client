@@ -7,12 +7,12 @@ opposites = {"left":"right", "right":"left", "up":"down", "down":"up"}
 while True:
     try:
         x = int(requests.get(
-            "https://raw.githubusercontent.com/programical/gitland/master/players/programical/x",
+            "https://raw.githubusercontent.com/programical/gitland/master/players/9034725985/x",
             headers={"Cache-Control": "no-cache", "Pragma": "no-cache"}
         ).text)
 
         y = int(requests.get(
-            "https://raw.githubusercontent.com/programical/gitland/master/players/programical/y",
+            "https://raw.githubusercontent.com/programical/gitland/master/players/9034725985/y",
             headers={"Cache-Control": "no-cache", "Pragma": "no-cache"}
         ).text)
     except Exception as err:
