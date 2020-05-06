@@ -58,6 +58,15 @@ while True:
         open("error", "a").write(str(err))
         continue
 
+    open("map", "w").write(repr(array_from_map))
+    status = array_from_map[x][y]
+    open("neighbors", "w").write(repr(time.time()))
+    open("neighbors", "a").write("\n\nNeighbors:\n")
+    for neighbor in neighbors:
+        open("neighbors", "a").write(f"({neighbor.x}, {neighbor.y})")
+        open("neighbors", "a").write("\n")
+        open("neighbors", "a").write(f"{array_from_map[neighbor.x][neighbor.y]}\n")
+
     if currentPosition.x < 5:
         move = "right"
     elif currentPosition.x > 17:
@@ -76,14 +85,6 @@ while True:
         move = random.choice(allowedMoves.split(" "))
 
     open("act", "w").write(move)
-    open("map", "w").write(repr(array_from_map))
-    status = array_from_map[x][y]
-    open("neighbors", "w").write(repr(time.time()))
-    open("neighbors", "a").write("\n\nNeighbors:\n")
-    for neighbor in neighbors:
-        open("neighbors", "a").write(f"({neighbor.x}, {neighbor.y})")
-        open("neighbors", "a").write("\n")
-        open("neighbors", "a").write(f"{array_from_map[neighbor.x][neighbor.y]}\n")
     os.system("git add .")
     os.system('git commit -m "move ' + open("act").read().strip() + '"')
     os.system("git pull -r origin master")
