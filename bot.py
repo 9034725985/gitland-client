@@ -80,6 +80,7 @@ while True:
     status = array_from_map[x][y]
     open("neighbors", "w").write(repr(time.time()))
     for neighbor in neighbors:
+        open("neighbors", "a").write("\n")
         open("neighbors", "a").write(f"({neighbor.x}, {neighbor.y})")
         open("neighbors", "a").write(f"({array_from_map[neighbor.x][neighbor.y]}")
     os.system("git add -A")
