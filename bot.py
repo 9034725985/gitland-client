@@ -79,6 +79,7 @@ while True:
     open("map", "w").write(repr(array_from_map))
     status = array_from_map[x][y]
     open("neighbors", "w").write(repr(time.time()))
+    open("neighbors", "a").write("\nNeighbors:\n")
     for neighbor in neighbors:
         open("neighbors", "a").write("\n")
         open("neighbors", "a").write("\n")
