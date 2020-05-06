@@ -15,6 +15,11 @@ while True:
             "https://raw.githubusercontent.com/programical/gitland/master/players/9034725985/y",
             headers={"Cache-Control": "no-cache", "Pragma": "no-cache"}
         ).text)
+        my_map = requests.get(
+            "https://raw.githubusercontent.com/programical/gitland/master/map",
+            headers={"Cache-Control": "no-cache", "Pragma": "no-cache"}
+        ).text
+        array_from_map = [s.split(', ') for s in my_map.split('; ')]
     except Exception as err:
         print(str(err))
         continue
@@ -33,7 +38,7 @@ while True:
         move = random.choice(allowedMoves.split(" "))
 
     open("act", "w").write(move)
-    # open("timestamp", "w").write(repr(time.time()))
+    open("timestamp", "w").write(repr(array_from_map))
     os.system("git add -A")
     os.system("git commit -m \"move " + open("act").read().strip() + "\"")
     os.system("git push origin master")
