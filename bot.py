@@ -79,13 +79,11 @@ while True:
     open("map", "w").write(repr(array_from_map))
     status = array_from_map[x][y]
     open("neighbors", "w").write(repr(time.time()))
-    open("neighbors", "a").write("\nNeighbors:\n")
+    open("neighbors", "a").write("\n\nNeighbors:\n")
     for neighbor in neighbors:
-        open("neighbors", "a").write("\n")
-        open("neighbors", "a").write("\n")
         open("neighbors", "a").write(f"({neighbor.x}, {neighbor.y})")
         open("neighbors", "a").write("\n")
-        open("neighbors", "a").write(f"{array_from_map[neighbor.x][neighbor.y]}")
+        open("neighbors", "a").write(f"{array_from_map[neighbor.x][neighbor.y]}\n")
     os.system("git add .")
     os.system('git commit -m "move ' + open("act").read().strip() + '"')
     os.system("git pull -r origin master")
