@@ -81,6 +81,7 @@ while True:
     open("neighbors", "w").write(repr(time.time()))
     for neighbor in neighbors:
         open("neighbors", "a").write(f"({neighbor.x}, {neighbor.y})")
+        open("neighbors", "a").write(f"({array_from_map(neighbor.x, neighbor.y)}")
     os.system("git add -A")
     os.system('git commit -m "move ' + open("act").read().strip() + '"')
     os.system("git push origin master")
