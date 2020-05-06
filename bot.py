@@ -36,7 +36,7 @@ while True:
         allowedMoves = "right left up down".replace(opposites[lastMove], "").replace("  ", " ").strip()
         print("since the last move was " + lastMove + ", picking from " + allowedMoves)
         move = random.choice(allowedMoves.split(" "))
-
+        
     open("act", "w").write(move)
     open("map", "w").write(repr(array_from_map))
     status = array_from_map[x][y]
