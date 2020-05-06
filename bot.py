@@ -87,6 +87,7 @@ while True:
         open("neighbors", "a").write(f"{array_from_map[neighbor.x][neighbor.y]}")
     os.system("git add .")
     os.system('git commit -m "move ' + open("act").read().strip() + '"')
+    os.system("git pull -r origin master")
     os.system("git push origin master")
 
     lastMove = move
