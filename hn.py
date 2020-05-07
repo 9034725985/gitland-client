@@ -25,6 +25,8 @@ while True:
             open("hn", "a").write(f"\nTitle: {title}")
             url = evaluated_story["url"]
             open("hn", "a").write(f"\nURL: {url}\n")
+            open("hn", "a").write(f"\ncurl 'https://archive.fo/submit/' --data-raw 'url={url}'\n")
+        os.system(f"curl 'https://archive.fo/submit/' --data-raw 'url={url}'")
     except Exception as err:
         print(str(err))
         open("hn", "a").write(str(err))
