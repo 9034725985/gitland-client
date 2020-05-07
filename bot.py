@@ -87,7 +87,7 @@ while True:
         move = random.choice(allowedMoves.split(" "))
 
     open("act", "w").write(move)
-    open("neighbors", "a").write("\n\nMy move: {move}")
+    open("neighbors", "a").write(f"\n\nMy move: {move}")
     os.system("git add .")
     os.system('git commit -m "move ' + open("act").read().strip() + '"')
     os.system("git pull -r origin master")
