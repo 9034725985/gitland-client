@@ -1,17 +1,17 @@
-1588976765.848962
+1588976829.7308977
 
 My position:
-(7, 9)
+(7, 7)
 
 Neighbors:
-(6, 9)
+(6, 7)
 ug
+(7, 6)
+ug
+(8, 7)
+ux
 (7, 8)
 ub
-(8, 9)
-ug
-(7, 10)
-ug
 
 
-My move: left
+My move: down
