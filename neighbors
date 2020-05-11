@@ -1,11 +1,11 @@
-1589164094.6903727
+1589164158.7974682
 
 My position:
 (11, 5)
 
 Neighbors:
 (10, 5)
-ux
+ur
 (11, 4)
 ux
 (12, 5)
@@ -14,4 +14,4 @@ ub
 ub
 
 
-My move: down
+My move: right
